@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <form>
+        <h1>Sejam bem vindos(as)</h1>
+        <label for="nome">Nome do Visitante</label>
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+        <div class="lado-a-lado">
+            <div class="lado">
+                
+                <label for="cpf">CPF</label>
+                <input type="text"id="cpf" placeholder="Digite seu CPF">
+            </div>
+            <div class="lado">
+                <label for="profissao">Profissão</label>
+                <input type="text" id="profissao" placeholder="Digite sua profissão"  required>
+            </div>
+        </div>
+        
+        <div class="lado-a-lado">
+            <div class="lado">
+                <label for="genero">Gênero</label>
+                <select id="genero">
+                    <option disabled selected>Escolha o Gênero</option>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                </select>
+            </div>
+            <div class="lado">
+                <label for="complemento">Idade</label>
+                <input type="text" id="idade" placeholder="Digite sua idade">
+            </div>
+        </div>
+        
+       
+        <div class="lado-a-lado">
+            <div class="lado">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" placeholder="Digite sua cidade" required>
+              
+            </div>
+            <div class="lado">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" placeholder="Digite seu bairro" required>
+              
+
+            </div>
+        </div>
+        
+       
+        <label for="sugestao">Sugestão:</label>
+        <textarea id="sugestao" cols="30" rows="5"></textarea>
+        <button type="submit" onClick="mandarPedido()">Enviar</button>
+
+        </form>
+
+        <img src="Assets/logo_secult_-_.jpg" alt="Logo do Governo do Estado do Ceará">
+
+
+    <script>
+        function mandarPedido() {
+            if (verificarCamposObrigatorios()) {
+                alert("Cadastro realizado com sucesso!");
+            } else {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            }
+        }
+
+        function verificarCamposObrigatorios() {
+            const camposObrigatorios = document.querySelectorAll("input[required], select[required]");
+
+            for (let i = 0; i < camposObrigatorios.length; i++) {
+                if (camposObrigatorios[i].value.trim() === "") {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
