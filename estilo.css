@@ -9,9 +9,13 @@
 body{
     height: 100vh;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+ .logo{
+    width: 100px;
+ }
 
 body.bg_filmes {
     background-image: url(Assets/FPLYm0PTCcKxMLQoPbNP.jpg);
